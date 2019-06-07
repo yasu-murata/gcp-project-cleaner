@@ -1,5 +1,7 @@
 #!bin/sh
-GCP_PROJECT="dev-tky-fiot"
+if [ -n "$1" ] ; then
+  GCP_PROJECT=$1
+fi
 echo Target project is [$GCP_PROJECT]
 
 delete_cluster () {
