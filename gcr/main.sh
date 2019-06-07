@@ -23,7 +23,6 @@ destroy () {
   echo ..
   echo start deleting...
   echo .
-  # gcloud -q container images delete $1 --force-delete-tags --project ${GCP_PROJECT}
   gcloud -q container images delete --force-delete-tags $1@sha256:$2 --project ${GCP_PROJECT}
   echo .
   echo finished.
