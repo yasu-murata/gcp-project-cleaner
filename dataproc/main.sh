@@ -4,7 +4,7 @@ if [ -n "$1" ] ; then
 fi
 echo Target project is [$GCP_PROJECT]
 
-delete_cluster () {
+destroy () {
   echo .
   echo ..
   echo target is detected...
@@ -22,7 +22,7 @@ gcloud dataproc clusters list --project ${GCP_PROJECT} | awk '$1 != "NAME" {prin
 do
   if [ "`echo $line | grep __name__: `" ]; then
     NAME=`echo $line | sed -e 's/__name__://g'`
-    delete_cluster $NAME
+    destroy $NAME
   fi
 done
 echo Your project is clean!!

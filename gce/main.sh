@@ -4,7 +4,7 @@ if [ -n "$1" ] ; then
 fi
 echo Target project is [$GCP_PROJECT]
 
-delete_cluster () {
+destroy () {
   echo .
   echo ..
   echo target is detected...
@@ -23,7 +23,7 @@ do
   if [ "`echo $line | grep __name__: `" ]; then
     NAME=`echo $line | cut -d ',' -f 1 | sed -e 's/__name__://g'`
     ZONE=`echo $line | cut -d ',' -f 2 | sed -e 's/__zone__://g'`
-    delete_cluster $NAME $ZONE
+    destroy $NAME $ZONE
   fi
 done
 echo Your project is clean!!
