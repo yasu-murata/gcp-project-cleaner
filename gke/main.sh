@@ -7,8 +7,8 @@ echo Target project is [$GCP_PROJECT]
 delete_cluster () {
   echo .
   echo ..
-  echo target cluster is detected...
-  echo target cluster is [$1]
+  echo target is detected...
+  echo target is [$1]
   echo .
   echo ..
   echo start deleting...
