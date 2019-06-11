@@ -16,11 +16,11 @@ destroy () {
   echo finished.
 }
 
-gcloud scheduler jobs list --project ${GCP_PROJECT} | awk '$1 != "ID" {printf "__name__:%s\n",$1}' | while read line
+gcloud scheduler jobs list --project ${GCP_PROJECT} | awk '$1 != "ID" {printf "__id__:%s\n",$1}' | while read line
 do
-  if [ "`echo $line | grep __name__: `" ]; then
-    NAME=`echo $line | sed -e 's/__name__://g'`
-    destroy $NAME
+  if [ "`echo $line | grep __id__: `" ]; then
+    ID=`echo $line | sed -e 's/__id__://g'`
+    destroy $ID
   fi
 done
 echo Your project is clean!!
