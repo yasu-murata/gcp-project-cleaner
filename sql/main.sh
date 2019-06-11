@@ -12,9 +12,7 @@ destroy () {
   echo .
   echo ..
   echo start deleting...
-  echo .
   gcloud -q sql instances delete $1 --project ${GCP_PROJECT}
-  echo .
   echo finished.
 }
 

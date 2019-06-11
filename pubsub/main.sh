@@ -12,9 +12,7 @@ destroy_topics () {
   echo .
   echo ..
   echo start deleting...
-  echo .
   gcloud -q pubsub topics delete $1 --project ${GCP_PROJECT}
-  echo .
   echo finished.
 }
 

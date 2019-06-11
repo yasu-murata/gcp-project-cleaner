@@ -12,9 +12,7 @@ destroy () {
   echo .
   echo ..
   echo start deleting...
-  echo .
   gsutil -m rm -r $1
-  echo .
   echo finished.
 }
 

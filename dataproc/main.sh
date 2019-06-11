@@ -12,9 +12,7 @@ destroy () {
   echo .
   echo ..
   echo start deleting...
-  echo .
   gcloud -q dataproc clusters delete $1 --project ${GCP_PROJECT}
-  echo .
   echo finished.
 }
 
